@@ -1,6 +1,8 @@
+require('dotenv').config();
+
 const express= require('express');
 const app=express();
-const port = 8089;
+
 
 const login=require('./Routes/login')
 
@@ -10,8 +12,8 @@ app.get('/', ( req,res)=>{
     res.send('hello')
 })
 
+console.log(process.env.PORT)
 
-
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);  
+app.listen(process.env.PORT, () => {
+  console.log(`Server listening on port ${process.env.PORT}`);  
 });
