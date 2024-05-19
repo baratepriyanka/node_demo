@@ -1,7 +1,7 @@
 const connection = require('../Db/db')
 
 const getAll=(req,res)=>{
-connection.query('select * from admin',(err,data)=>{
+connection.query('select * from users',(err,data)=>{
     if(err){
         console.log(err)
         res.status(400).json({ error: "Something went wrong!" })
@@ -13,6 +13,20 @@ connection.query('select * from admin',(err,data)=>{
 }
 
 
+const getAllData=(req,res)=>{
+
+    // connection.query('select * from admin',(err,data)=>{
+    //     if(err){
+    //         console.log(err)
+    //         res.status(400).json({ error: "Something went wrong!" })
+    //     }
+    res.send('hello')
+        
+    // });
+      
+    }
+
 module.exports={
-    getAll:getAll
+    getAll:getAll,
+    getAllData:getAllData
 }
